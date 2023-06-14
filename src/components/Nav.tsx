@@ -14,13 +14,10 @@ const Nav = () => {
             className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
             type="button"
           >
-            <i className="text-white fa-bars"></i>
+            <i className="text-white"></i>
           </button>
         </div>
-        <div
-          className="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden"
-          id="example-collapse-navbar"
-        >
+        <div className="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden">
           <ul className="flex flex-col lg:flex-row  lg:px-6 list-none lg:ml-auto">
             <li className="flex items-center">
               <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-gray-800 lg:text-gray-300" href="#">
@@ -52,11 +49,17 @@ const Nav = () => {
               </a>
             </li>
             <li className="flex items-center justify-between">
-              <div className="inline-flex w-full sm:w-auto">
+              <button 
+                className="inline-flex w-full sm:w-auto" 
+                type="button"
+                onClick={() => {
+                  window.open("https://forms.gle/5Uj6Jg5K1aC4J7ZP9", "_blank")
+                }}
+              >
                 <a href="#" className="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3">
                   <i className="">Register Now</i>
                 </a>
-              </div>
+              </button>
             </li>
           </ul>
         </div>
