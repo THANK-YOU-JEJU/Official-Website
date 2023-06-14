@@ -1,72 +1,150 @@
-import React from 'react'
-import {AiFillGithub} from "react-icons/ai"
-import {AiOutlineInstagram} from "react-icons/ai"
-import {FaBars} from "react-icons/Fa"
-
-const Nav = () => {
+import React from "react";
+import {
+  Navbar,
+  MobileNav,
+  Typography,
+  Button,
+  IconButton,
+  Card,
+} from "@material-tailwind/react";
+ 
+export default function Example() {
+  const [openNav, setOpenNav] = React.useState(false);
+ 
+  React.useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setOpenNav(false)
+    );
+  }, []);
+ 
+  const navList = (
+    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center text-gray-900">
+          Our Story
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center text-gray-900">
+          Environmental Issues
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center text-gray-900">
+          Gallery
+        </a>
+      </Typography>
+    </ul>
+  );
+ 
   return (
-    <nav className="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 ">
-      <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-        <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-          <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white" href="#">
-            THANK YOU JEJU
-          </a>
-          <button
-            className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-            type="button"
+    <>
+      <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+        <div className="flex items-center justify-between text-blue-gray-900">
+          <Typography
+            as="a"
+            href="#"
+            className="mr-4 cursor-pointer py-1.5 text-gray-900"
           >
-            <i className="text-white"></i>
-          </button>
+            THANK YOU JEJU
+          </Typography>
+          <div className="flex items-center gap-4">
+            <div className="mr-4 hidden lg:block">{navList}</div>
+            <Button
+              variant="gradient"
+              size="sm"
+              className="hidden lg:inline-block"
+            >
+              <span>Buy Now</span>
+            </Button>
+            <IconButton
+              variant="text"
+              className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+              ripple={false}
+              onClick={() => setOpenNav(!openNav)}
+            >
+              {openNav ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  className="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
+            </IconButton>
+          </div>
         </div>
-        <div className="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden">
-          <ul className="flex flex-col lg:flex-row  lg:px-6 list-none lg:ml-auto">
-            <li className="flex items-center">
-              <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-gray-800 lg:text-gray-300" href="#">
-                About Us
-              </a>
-            </li>
-            <li className="flex items-center">
-              <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-gray-800 lg:text-gray-300" href="#">
-                Gallery
-              </a>
-            </li>
-            <li className="flex items-center">
-              <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-gray-800 lg:text-gray-300" href="#">Shop</a>
-            </li>
-            <li className="flex items-center">
-              <a 
-                className="lg:text-white lg:hover:text-gray-300 px-3 py-4 lg:py-2 flex items-center"
-                href="https://www.instagram.com/thankyoujeju_gec/"
-              >
-                <AiOutlineInstagram />
-              </a>
-            </li>
-            <li className="flex items-center ">
-              <a
-                className="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                href="https://github.com/oculit-dev"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="flex items-center justify-between">
-              <button 
-                className="inline-flex w-full sm:w-auto" 
-                type="button"
-                onClick={() => {
-                  window.open("https://forms.gle/5Uj6Jg5K1aC4J7ZP9", "_blank")
-                }}
-              >
-                <a href="#" className="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3">
-                  <i className="">Register Now</i>
-                </a>
-              </button>
-            </li>
-          </ul>
-        </div>
+        <MobileNav open={openNav}>
+          {navList}
+          <Button size="sm" fullWidth className="mb-2 bg-teal-800">
+            <span>Buy Now</span>
+          </Button>
+        </MobileNav>
+      </Navbar>
+      <div className="mx-auto max-w-screen-md py-12">
+        <Card className="mb-12 overflow-hidden rounded-xl">
+          <img
+            alt="nature"
+            className="h-[32rem] w-full object-cover object-center"
+            src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2717&q=80"
+          />
+        </Card>
+        <Typography variant="h2" color="blue-gray" className="mb-2">
+          Dear Jeju, “Thank You!” 
+        </Typography>
+        <Typography color="gray" className="font-normal">
+          Welcome to our community service website! We are a group of individuals dedicated 
+          to making a positive impact in our community through various service projects and events. 
+          Whether you are an individual looking to get involved and give back, or an organization 
+          seeking volunteers for your cause, we hope to connect you with opportunities to make a 
+          difference. We collaborate with BHA and SJA to help protect the environment on Jeju Island. 
+          Together, we address environmental issues such as pollution by combining resources. 
+          Whether through cleanups, tree planting, or educational campaigns, we work to raise 
+          awareness and drive sustainable change in the community. Our community service group 
+          stands out by collaborating with other organizations, prioritizing education and 
+          awareness, and using an online store to raise funds. We are a group of individuals 
+          dedicated to making a positive impact in our community through various service projects 
+          and events. 
+        </Typography>
       </div>
-    </nav>
-  )
+    </>
+  );
 }
-
-export default Nav

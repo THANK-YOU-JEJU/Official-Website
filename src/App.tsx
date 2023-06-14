@@ -1,14 +1,14 @@
-import Contact from "./components/Home/Contact";
-import Hero from "./components/Home/Hero";
+import Home from "./components/Home/Home";
 import Nav from "./components/Nav";
 
 function App() {
   return (
-    <div className="container">
-      <Nav />
-      <Hero />
-      <Contact />
-    </div>
+    <main>
+      <div>
+        <Nav />
+        <Home />
+      </div>
+    </main>
   )
 }
 
