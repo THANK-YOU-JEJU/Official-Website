@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        shadows: ["Shadows Into Light", "cursive"],
+        andika: ["Andika", "sans-serif"]
+      }
+    },
   },
   plugins: [],
 }
