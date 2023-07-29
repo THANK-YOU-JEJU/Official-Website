@@ -15,8 +15,6 @@ import {
   PhotoIcon,
   UserGroupIcon
 } from "@heroicons/react/24/outline";
-import { Link, Route, Routes } from "react-router-dom";
-import AboutUs from "./AboutUs/AboutUs";
 
 function NavList() {
   return (
