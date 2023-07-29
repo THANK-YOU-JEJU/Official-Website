@@ -1,4 +1,3 @@
-import React from 'react'
 import Nav from '../Nav'
 import Footer from '../Footer'
 import AboutUsMain from './AboutUsMain'
@@ -8,8 +7,8 @@ const AboutUs = () => {
   return (
     <div>
       <Nav />
-      <AboutUsHero></AboutUsHero>
-      <AboutUsMain></AboutUsMain>
+      <AboutUsHero/>
+      <AboutUsMain/>
       <Footer />
     </div>
   )
