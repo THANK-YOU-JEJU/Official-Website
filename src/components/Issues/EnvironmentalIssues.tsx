@@ -7,6 +7,8 @@ import {
   PaperAirplaneIcon,
   UsersIcon
 } from "@heroicons/react/24/outline";
+import Nav from '../Nav';
+import Footer from '../Footer';
 
 interface IssueInter {
   icon: React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, "ref"> & {
@@ -78,19 +80,23 @@ const renderIssues = () => {
 
 const EnvironmentalIssues = () => {
   return (
-    <section className="bg-white dark:bg-gray-900">
-      <div className="container px-6 py-10 mx-auto">
-        <h1 className="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">
-          What are some <span className="underline decoration-blue-500">Environmental Problems</span> and <span className="underline decoration-blue-500">Solutions</span>
-        </h1>
-        <p className="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
-          Jeju Island is a beautiful place with a unique natural environment, but like many areas, it faces a number of environmental challenges. Here is a list of some of the major environmental issues facing Jeju Island, along with potential solutions:
-        </p>
-        <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">
-          {renderIssues()}
-        </div>
-      </div>   
-    </section>
+    <div>
+      <Nav/>
+      <section className="bg-white dark:bg-gray-900">
+        <div className="container px-6 py-10 mx-auto">
+          <h1 className="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">
+            What are some <span className="underline decoration-blue-500">Environmental Problems</span> and <span className="underline decoration-blue-500">Solutions</span>
+          </h1>
+          <p className="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
+            Jeju Island is a beautiful place with a unique natural environment, but like many areas, it faces a number of environmental challenges. Here is a list of some of the major environmental issues facing Jeju Island, along with potential solutions:
+          </p>
+          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">
+            {renderIssues()}
+          </div>
+        </div>   
+      </section>
+      <Footer/>
+    </div>
   )
 }
 

@@ -1,3 +1,5 @@
+import Footer from '../Footer'
+import Nav from '../Nav'
 import avatar1 from '/assets/avatar1.jpg'
 import avatar2 from '/assets/avatar2.jpg'
 import avatar3 from '/assets/avatar3.jpg'
@@ -28,9 +30,10 @@ const renderImages = () => {
   })
 }
 
-const Gallary = () => {
+const Gallery = () => {
   return (
     <main>
+      <Nav />
       <section className="text-gray-600 body-font">
           <div className="container px-5 py-24 mx-auto flex flex-wrap">
             <div className="flex flex-wrap md:-m-2 -m-1">
@@ -38,8 +41,9 @@ const Gallary = () => {
             </div>
           </div>
       </section>
+      <Footer />
     </main>
   )
 }
 
-export default Gallary
+export default Gallery
