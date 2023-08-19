@@ -13,7 +13,7 @@ import {
   XMarkIcon,
   GlobeAsiaAustraliaIcon,
   PhotoIcon,
-  UserGroupIcon
+  UserGroupIcon,
 } from "@heroicons/react/24/outline";
 
 function NavList() {
@@ -58,17 +58,17 @@ function NavList() {
     </List>
   );
 }
- 
+
 export default function Example() {
   const [openNav, setOpenNav] = React.useState(false);
- 
+
   React.useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
+      () => window.innerWidth >= 960 && setOpenNav(false),
     );
   }, []);
- 
+
   return (
     <Navbar className="sticky inset-0 z-10 h-max w-full rounded-lg py-2 px-4 my-4 bg-white/30 shadow-xl backdrop-blur-3xl lg:px-8 lg:py-4 mx-auto max-w-screen-xl">
       <div className="flex items-center justify-between text-gray-900">
@@ -84,9 +84,7 @@ export default function Example() {
           <NavList />
         </div>
         <div className="hidden gap-2 lg:flex">
-          <Button className="bg-gray-900 text-sm p-2">
-            Register Now
-          </Button>
+          <Button className="bg-gray-900 text-sm p-2">Register Now</Button>
         </div>
         <IconButton
           variant="text"
@@ -104,9 +102,7 @@ export default function Example() {
       <Collapse open={openNav}>
         <NavList />
         <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden bg-gray-900 text-gray-900">
-          <Button>
-            Register Now
-          </Button>
+          <Button>Register Now</Button>
         </div>
       </Collapse>
     </Navbar>
