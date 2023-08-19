@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import routes from "./route";
 import Home from "./components/Home/Home";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Gallery from "./components/Gallery/Gallery";
