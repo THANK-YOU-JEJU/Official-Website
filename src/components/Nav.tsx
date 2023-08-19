@@ -74,7 +74,7 @@ export default function Example() {
       <div className="flex items-center justify-between text-gray-900">
         <Typography
           as="a"
-          href="/"
+          href="/home"
           variant="h6"
           className="mr-4 cursor-pointer py-1.5 lg:ml-2"
         >
