@@ -9,12 +9,12 @@ import Register from "./components/LogIn/Register";
 function App() {
   return (
     <Routes>
-      <Route path="/home" element={<Home/>}/>
-      <Route path="/aboutus" element={<AboutUs/>}/>
-      <Route path="/gallery" element={<Gallery/>}/>
-      <Route path="/issues" element={<EnvironmentalIssues/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/register" element={<Register/>}/>
+      <Route path="home" element={<Home/>}/>
+      <Route path="aboutus" element={<AboutUs/>}/>
+      <Route path="gallery" element={<Gallery/>}/>
+      <Route path="issues" element={<EnvironmentalIssues/>}/>
+      <Route path="login" element={<Login/>}/>
+      <Route path="register" element={<Register/>}/>
     </Routes>
   )
 }
