@@ -21,7 +21,7 @@ function NavList() {
     <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
       <Typography
         as="a"
-        href="/aboutus"
+        href="aboutus"
         variant="small"
         color="blue-gray"
         className="font-normal"
@@ -33,7 +33,7 @@ function NavList() {
       </Typography>
       <Typography
         as="a"
-        href="/gallery"
+        href="gallery"
         variant="small"
         color="blue-gray"
         className="font-normal"
@@ -45,7 +45,7 @@ function NavList() {
       </Typography>
       <Typography
         as="a"
-        href="/issues"
+        href="issues"
         variant="small"
         color="blue-gray"
         className="font-normal"
@@ -74,7 +74,7 @@ export default function Example() {
       <div className="flex items-center justify-between text-gray-900">
         <Typography
           as="a"
-          href="/home"
+          href="home"
           variant="h6"
           className="mr-4 cursor-pointer py-1.5 lg:ml-2"
         >
